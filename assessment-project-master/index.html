@@ -1,0 +1,327 @@
+<!--<!DOCTYPE html>-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travel Love</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <style>
+#div1{
+  background-image: url('fg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 50%;
+}
+</style>
+<style>
+#div2{
+  background-image: url('fgg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 50%;
+}
+</style>
+<style>
+#div3{
+  background-image: url('wee.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 50%;
+}
+</style>
+  <body>
+
+
+    <section class="header" id="home">
+
+
+
+<nav>
+
+  <img src="sos3.png">
+
+  <ul>
+    <li><a href="#home" style="text-decoration:none;"><font color="white">Home</font></a></li>
+    <li><a href="#gall" style="text-decoration:none;"><font color="white">Travelling Gallery</font></a></li>
+    <li><a href="#convert" style="text-decoration:none;"><font color="white">Currency Convertor</font></a></li>
+	 <li><a href="#food" style="text-decoration:none;"><font color="white">Food & Restaurents</font></a></li>
+	  <li><a href="#fg" style="text-decoration:none;"><font color="white">Flights</font></a></li>
+	    <li><a href="#we" style="text-decoration:none;"><font color="white">Weather</font></a></li>
+    <li><a href="#cont" style="text-decoration:none;"><font color="white">Contact</font></a></li>
+	
+  </ul>
+</nav>
+
+
+
+                      <div class='quote-text'>
+                       <h1 id='quote'></h1>
+                        <p id='author'></p>
+                         </div>
+
+
+
+                            <script>
+                                var url="https://api.quotable.io/random";
+                                var xhr=new XMLHttpRequest()
+                                xhr.open('GET',url)
+                                xhr.onreadystatechange=getData
+                                function getData()
+                                {
+                                  var res_data=JSON.parse(this.responseText)
+                                  var a=res_data.content;
+                                  var b=res_data.author;
+                                  console.log(res_data);
+                                 var get_tag=document.getElementById('quote');
+                                  get_tag.innerHTML=a;
+                                  var get_tag1=document.getElementById('author');
+                                 get_tag1.innerHTML=b;
+                                 }
+                               xhr.send();
+                               </script>
+
+
+
+
+        </section>
+
+
+
+       <section class="gallery" id="gall">
+         <h1>Travelling Gallery</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="gallery-box">
+
+
+              <a href="ny.html"><img src="nyg.jpg"></a>
+              <h4>New York City</h4>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="gallery-box">
+
+
+              <a href="malibu.html"><img src="malibug.jpg"></a>
+              <h4>Malibu</h4>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="gallery-box">
+
+
+              <a href="london1.html"><img src="londong.jpg" height="170"></a>
+              <h4>London</h4>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="gallery-box">
+
+
+              <a href="athens.html"><img src="greeceg.jpg" height="170"></a>
+              <h4>Athens</h4>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+       </section>
+
+       <section class="banner" id="convert">
+      <div class="banner-highlights">
+
+
+        <table>
+        <tr>
+          <td style="padding-left:600px">
+          <div class="currency" >
+
+              <input type="text" name="from_VAL" id="from_VAL" placeholder="Enter amount"  style="background-color: #eee; font-weight: bold;" /><br>
+              <!-- <button type="button" name="button" onclick="convert()"> Convert </button> -->
+            <br>
+            <div class="conv">
+              <select id="from" class="postfix"  style="background-color: #eee; font-weight: bold;">
+                <option value="AUD" >AUD</option>
+                <option value="AZN" >AZN</option>
+                <option value="BHD" >BHD</option>
+                <option value="CAD" >CAD</option>
+                <option value="CHF" >CHF</option>
+                <option value="EUR" >EUR</option>
+                <option value="GBP" >GBP</option>
+                <option value="INR" >INR</option>
+                <option value="JOD" >JOD</option>
+                <option value="KWD" >KWD</option>
+                <option value="KYD" >KYD</option>
+                <option value="OMR" >OMR</option>
+                <option value="USD" selected>USD</option>
+                <option value="UYU" >UYU</option>
+              </select>
+            </div><br>
+            <p> <button type="button" name="button" onclick="convert()"  style="background-color: #eee; font-weight: bold ;"> Convert </button></p>
+             <div class="conv">
+               <select id="to" class="postfix" style="background-color: #eee; font-weight: bold;">
+                 <option value="AUD" >AUD</option>
+                 <option value="AZN" >AZN</option>
+                 <option value="BHD" >BHD</option>
+                 <option value="CAD" >CAD</option>
+                 <option value="CHF" >CHF</option>
+                 <option value="EUR" >EUR</option>
+                 <option value="GBP" >GBP</option>
+                 <option value="INR" selected>INR</option>
+                 <option value="JOD" >JOD</option>
+                 <option value="KWD" >KWD</option>
+                 <option value="KYD" >KYD</option>
+                 <option value="OMR" >OMR</option>
+                 <option value="USD">USD</option>
+                 <option value="UYU" >UYU</option>
+               </select>
+            </div>
+            <br>
+            <div class="conv">
+              <input type="text" id="to_VAL" readonly placeholder="Get value" value="0" disabled style="background-color: #eee; font-weight: bold;" />
+
+            </div>
+          </div>
+          <script>
+            function convert(){
+
+        var from =document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+        var xmlhttp= new XMLHttpRequest();
+        var url="https://free.currencyconverterapi.com/api/v6/convert?q="+from+"_"+to+"&compact=ultra&apiKey=44bbef74df526f28aa0a";
+
+        xmlhttp.open("GET", url, true);//async
+        xmlhttp.send();
+        xmlhttp.onreadystatechange=function(){
+        if(this.readyState === 4 && this.status === 200 )
+        {
+        var result=this.responseText;
+        console.log(result);
+        var jsResult=JSON.parse(result);
+                  var q = from+"_"+to;
+                  console.log(q);
+                  console.log(jsResult[q]);
+
+                  var amount = jsResult[q] * document.getElementById('from_VAL').value;
+                  console.log(amount);
+        document.getElementById("to_VAL").value= amount;
+        }
+              }
+            }
+          </script>
+
+          </td>
+        </tr>
+        </table>
+        <!-- </table> -->
+        <br>
+        </div>
+
+
+      </div>
+       </section>
+	   
+
+       <section class="users-feedback">
+         <h1>Users Review</h1>
+         <div class="container">
+           <div class="row">
+          <div class="col-md-4">
+            <div class="user-review">
+              <p>With a focus on interface design, It strives to offer travelers the most intuitive online travel services available. Their easy-to-navigate website makes everything quick and easy.</p>
+             <h5>John Watson</h5>
+             <small>Canada</small>
+            </div>
+            <img src="p4.jpg">
+          </div>
+          <div class="col-md-4">
+            <div class="user-review">
+              <p>With a focus on interface design, It strives to offer travelers the most intuitive online travel services available. Their easy-to-navigate website makes everything quick and easy.</p>
+             <h5>Sara Ltryte</h5>
+             <small>California</small>
+            </div>
+            <img src="p6.jpg">
+          </div>
+          <div class="col-md-4">
+            <div class="user-review">
+              <p>With a focus on interface design, It strives to offer travelers the most intuitive online travel services available. Their easy-to-navigate website makes everything quick and easy.</p>
+             <h5>Avan</h5>
+             <small>Turkey</small>
+            </div>
+            <img src="p1.jpg">
+          </div>
+           </div>
+
+         </div>
+       </section>
+<section  id="food"><div id="div2"><br>
+<br>
+	<a href="zomato.html" style="text-decoration:none"><h1><b>Food</b></h1></a>
+	<br>
+</div></section>
+
+
+<section id="fg"><div id="div1"><br>
+<br><a href="airline.html" style="text-decoration:none"><h1>Flights</h1></a>
+	<br>
+</div></section>
+
+<section id="we"><div id="div3"><br>
+<br><a href="weather.html" style="text-decoration:none"><h1>Weather</h1></a>
+	<br>
+</div></section>
+
+<section class="footer" id="cont">
+  <div class="container">
+
+    <table border="0">
+
+      <col width="330">
+	<col width="330">
+	<col width="330">
+	<col width="330">
+      <tr>
+        <td style="transform: translate(-40px,20px);"><h1><i><b><font color="white">Contact:</font></b></i></h1>
+        </td>
+        <td>
+
+      <div class="col-md-3" style="padding-left:70px">
+        <a href="https://www.instagram.com/_farmaan1/"><img src="instagram.png" class="logo"></a>
+      </div>
+    </td>
+    <td>
+      <div class="col-md-3" style="padding-left:220px">
+     <a href="https://www.linkedin.com/in/chanderdeep-singh-sandhu-6803b1170/"><img src="linkedin-sign.png" class="logo"></a>
+      </div>
+    </td>
+    <td>
+      <div class="col-md-3" style="padding-left:250px">
+      <a href="https://github.com/ashutoshkaushal"><img src="github-logo.png" class="logo"></a>
+      </div>
+    </td>
+    <td>
+      <div class="col-md-3" style="padding-left:250px">
+     <a href="https://dikshantbaliresume.000webhostapp.com/"><img src="resume.png" class="logo"></a>
+      </div>
+    </td>
+  </tr>
+
+
+
+    </table>
+  </div>
+</section>
+<div class="last">
+  <b>Made By</b> : <a href="https://dikshantbaliresume.000webhostapp.com/" style="text-decoration: none;"><font color="white">Ashutosh Kaushal, Chanderdeep Singh Sandhu, Dikshant Bali, Farman Zaidi, Gunnagya Nijhawan</font></a>
+</div>
+
+
+  </body>
+</html>

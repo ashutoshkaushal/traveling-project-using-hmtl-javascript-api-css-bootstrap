@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="internal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="main">
+
+           <nav>
+
+             <img src="sos3.png" width="170" height="170">
+
+             <ul>
+               <li><a href="index.html">Home</a></li>
+
+               <li><a href="#cont">Contact</a></li>
+             </ul>
+           </nav>
+   </div>
+   <br><br>
+
+ <div class="container">
+
+    <table border="0">
+
+   <tr>
+     <td>
+     <div class="col-md-2">
+       <div class="internal-img">
+         <img class="slide" src="nyi.webp">
+         <img class="slide" src="nys.webp">
+         <img class="slide" src="nys1.jpg">
+         <img class="slide" src="nys2.jpg">
+       <h2>New York City</h2>
+       <button type="button" class="clickme"  onclick="myFunction()">Explore More?</button>
+
+       <script>
+function myFunction() {
+location.assign("https://www.planetware.com/tourist-attractions-/new-york-city-us-ny-nyc.htm")
+}
+</script>
+       </div>
+
+       <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("slide");
+for (i = 0; i < x.length; i++) {
+ x[i].style.display = "none";
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}
+x[myIndex-1].style.display = "block";
+setTimeout(carousel, 1000);
+}
+</script>
+     </div>
+      </td>
+     <td style="padding-left:300px">
+  <div id="weather">
+
+    <h2>TEMPERATURE</h2>
+
+    <ul id="list">
+
+    </ul>
+
+    <script>
+      var url='https://api.openweathermap.org/data/2.5/weather?q=New%20York,us&APPID=20a9cfdc85952bc622119bf76f5be8a6';
+ var xhr=new XMLHttpRequest();
+ xhr.open('GET',url);
+ xhr.onreadystatechange=test
+
+ function test(){
+   if(this.status==200 && this.readyState==4){
+     var res_data=JSON.parse(this.responseText)
+     console.log(res_data.main)
+     var e2=document.getElementById('weather')
+
+var list=document.getElementById('list')
+
+var a=res_data.main.temp-273.15
+var rounda=Math.round(a * 100) / 100
+
+var b=res_data.main.temp_min-273.15
+var roundb=Math.round(b * 100) / 100
+
+var c=res_data.main.temp_max-273.15
+var roundc=Math.round(c * 100) / 100
+
+var e=document.createElement('li')
+
+console.log(res_data.main.temp);
+e.textContent=rounda+" °C => Avg. Temperature"
+var e1=document.createElement('li')
+e1.textContent=roundb+" °C => Min. Temperature"
+var e3=document.createElement('li')
+e3.textContent=roundc+" °C => Max. Temperature"
+
+list.appendChild(e).style.color="white"
+list.appendChild(e).style.fontSize = "x-large"
+
+list.appendChild(e1).style.color="white"
+list.appendChild(e1).style.fontSize = "x-large"
+
+list.appendChild(e3).style.color="white"
+list.appendChild(e3).style.fontSize = "x-large"
+
+   }
+ }
+ xhr.send();
+    </script>
+  </div>
+     </td>
+
+
+     </tr>
+     <tr>
+       <td>
+
+
+     <div class="col-md-2">
+       <div class="culture">
+         <h1 align="center">Culture of NYC</h1>
+         <p>
+           New York City has been described as the cultural capital of the world.
+           The culture of New York City is reflected in its size and ethnic diversity.
+            Many American cultural movements first emerged in the city.
+            The Harlem Renaissance established the African-American renaissance in the United States.
+             Large numbers of Irish, Italian, Jewish, and ultimately Asian and Hispanic Americans also emigrated to New York throughout the 20th century, significantly influencing the culture and image of New York City. The American modern dance developed in New York in the early 20th century. The city was the top venue for jazz in the 1940s, expressionism in the 1950s and home to hip hop, punk rock, and the Beat Generation. The Stonewall Inn in Greenwich Village, Lower Manhattan, is a designated U.S. National Historic Landmark and National Monument, as the site of the June 1969 Stonewall riots and the cradle of the modern gay rights movement.
+
+</p>
+       </div>
+     </div>
+
+</td>
+
+<td style="padding-left:300px">
+<div id="map">
+<p>hahah</p>
+<script>
+function initMap()
+{
+var location={ lat:40.7128 ,lng: -74.0060};
+var map=new google.maps.Map(document.getElementById("map"),{
+  zoom:4,
+  center:location
+});
+var marker=new google.maps.Marker({
+   position:location,
+   map:map
+})
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbUdblkZsFfZZ-l6dnrfd32t78RAs5I4o&callback=initMap">
+</script>
+
+</div>
+
+
+
+</td>
+
+</tr>
+</table>
+
+<br><br>
+<section class="footer" id="cont">
+  <div class="container">
+
+    <table border="0">
+
+      <col width="330">
+	<col width="330">
+	<col width="330">
+	<col width="330">
+      <tr>
+        <td style="transform: translate(150px,-5px);"><h1><i><b><font color="white">Contact:</font></b></i></h1>
+        </td>
+        <td>
+          <div class="col-md-3" style="padding-left:70px">
+            <a href="https://www.instagram.com/_farmaan1/"><img src="instagram.png" class="logo"></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-3" style="padding-left:50px">
+          <a href="http://www.linkedin.com/in/chanderdeep-singh-sandhu-03670215a"><img src="linkedin-sign.png" class="logo"></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-3" style="padding-left:30px">
+          <a href="https://github.com/ashutoshkaushal"><img src="github-logo.png" class="logo"></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-3" style="transform: translate(20px,-5px)">
+         <a href="https://dikshantbaliresume.000webhostapp.com"><img src="resume.png" class="logo"></a>
+          </div>
+    </td>
+  </tr>
+
+    </table>
+  </div>
+</section>
+
+<div class="last">
+<b>Mail us at:</b> : <a href="gunnagyanijhawan2910@gmail.com" style="text-decoration: none;"><font color="white">Gunnagya Nijhawan </font></a>
+</div>
+
+  </body>
+</html>

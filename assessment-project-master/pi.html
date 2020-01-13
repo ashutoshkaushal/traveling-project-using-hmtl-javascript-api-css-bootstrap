@@ -1,0 +1,57 @@
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div id="demo">
+    <ul id="list"></ul>
+  </div>
+<script>
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  // xhr.addEventListener("readystatechange", function () {
+  // 	if (this.readyState === this.DONE) {
+  // 		console.log(this.responseText);
+  // 	}
+  // });
+  var url="https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php?location=New%20York"
+  xhr.open("GET", url);
+  xhr.setRequestHeader("x-rapidapi-host", "devru-latitude-longitude-find-v1.p.rapidapi.com");
+  xhr.setRequestHeader("x-rapidapi-key", "08ac2a4bfamsh8c55e058e63f6d3p173c0cjsnf154d6d3ea0e");
+  xhr.onload=test
+  function test()
+  {
+     var resdata=JSON.parse(this.responseText)
+    console.log(resdata)
+    console.log(resdata.Results.length);
+    var name=document.getElementById('list')
+    for(var i=0;i<resdata.Results.length;i++)
+    {
+      var li=document.createElement('li')
+      li.textContent=resdata.Results[i].name
+      name.appendChild(li)
+    }
+    for(var i=0;i<resdata.Results.length;i++)
+    {
+      var li1=document.createElement('li')
+      li1.textContent=resdata.Results[i].type
+      name.appendChild(li1)
+    }
+//  resdata.forEach( foot =>{
+//  var e2=document.getElementById("demo")
+//  var e3=document.createElement("li")
+//  const p=document.createElement("p")
+//  p.textContent=foot.type
+//  e3.appendChild(p)
+//  e2.appendChild(e3)
+// })
+  }
+ xhr.send();
+
+
+ </script>
+</body>
+</html>

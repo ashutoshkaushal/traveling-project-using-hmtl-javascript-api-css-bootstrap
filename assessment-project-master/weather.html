@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="ws.css">
+	</head>
+	<script> #ddd{
+	background-image: url('dd.jpg');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	height:200px;
+	width:200px;
+}</script>
+	<body >
+<div id="ddd">	
+		<div class="jumbotron" background="dd.jpg" >
+			<h2 class="text-center" style="text-shadow:2px 4px 8px;font-weight:600;">Get Current Weather</h2>
+		</div>
+		<div class="container" background="dd.jpg">
+			<div class="row ">
+				<h3 class="text-center text-primary">ENTER THE CITY NAME</h3>
+				<span id="error"></span>
+			</div>
+			<div class="row form-group form-inline" id="div2">
+				<input type="text" name="city"
+			id="city" class="form-control" placeholder="City Name">
+				<button id="submitWeather" class="btn btn-primary" >Search City</button>
+			</div>
+			<div id="show" style="padding:5px;color:white;">
+			</div>
+		</div>
+		
+			<!-- jQuery library -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+			<!-- Latest compiled JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+			</script>
+			<script src="weather.js"></script></div>
+	</body>
+</html>

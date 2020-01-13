@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="internal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+
+    <div class="main">
+
+           <nav>
+
+             <img src="sos3.png" width="170" height="170">
+
+             <ul>
+               <li><a href="index.html">Home</a></li>
+
+               <li><a href="#cont">Contact</a></li>
+             </ul>
+           </nav>
+   </div>
+   <br><br>
+
+        <div class="container">
+
+           <table border="0">
+
+          <tr>
+            <td>
+            <div class="col-md-2">
+              <div class="internal-img">
+            <img class="slide" src="malibui.jpg">
+            <img class="slide" src="ms.jpg">
+            <img class="slide" src="ms1.jpg">
+          <img class="slide" src="ms2.jpg">
+
+              <h2>Malibu</h2>
+              <button type="button" class="clickme"  onclick="myFunction()">Explore More?</button>
+
+              <script>
+    function myFunction() {
+      location.assign("https://theculturetrip.com/north-america/usa/california/articles/top-things-to-see-do-in-malibu/")
+    }
+    </script>
+              </div>
+
+              <script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("slide");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}
+      x[myIndex-1].style.display = "block";
+      setTimeout(carousel, 1000);
+    }
+    </script>
+            </div>
+             </td>
+            <td style="padding-left:300px">
+         <div id="weather">
+
+           <h2>TEMPERATURE</h2>
+
+           <ul id="list">
+
+           </ul>
+
+           <script>
+             var url='https://api.openweathermap.org/data/2.5/weather?q=Malibu,los%20angeles&APPID=20a9cfdc85952bc622119bf76f5be8a6';
+        var xhr=new XMLHttpRequest();
+        xhr.open('GET',url);
+        xhr.onreadystatechange=test
+
+        function test(){
+          if(this.status==200 && this.readyState==4){
+            var res_data=JSON.parse(this.responseText)
+            console.log(res_data.main)
+            var e2=document.getElementById('weather')
+
+    var list=document.getElementById('list')
+
+    var a=res_data.main.temp-273.15
+    var rounda=Math.round(a * 100) / 100
+
+    var b=res_data.main.temp_min-273.15
+    var roundb=Math.round(b * 100) / 100
+
+    var c=res_data.main.temp_max-273.15
+    var roundc=Math.round(c * 100) / 100
+
+     var e=document.createElement('li')
+
+     console.log(res_data.main.temp);
+      e.textContent=rounda+" °C => Avg. Temperature"
+     var e1=document.createElement('li')
+     e1.textContent=roundb+" °C => Min. Temperature"
+     var e3=document.createElement('li')
+     e3.textContent=roundc+" °C => Max. Temperature"
+
+     list.appendChild(e).style.color="white"
+    list.appendChild(e).style.fontSize = "x-large"
+
+     list.appendChild(e1).style.color="white"
+     list.appendChild(e1).style.fontSize = "x-large"
+
+    list.appendChild(e3).style.color="white"
+    list.appendChild(e3).style.fontSize = "x-large"
+
+          }
+        }
+        xhr.send();
+           </script>
+         </div>
+            </td>
+
+
+            </tr>
+            <tr>
+              <td>
+
+
+            <div class="col-md-2">
+              <div class="culture">
+                <h1 align="center">Culture of Malibu</h1>
+                <p>
+                  Stretching for more than 30 miles along the Pacific and Highway One, Malibu has achieved almost mythological status among California beach towns.
+                   Hollywood stars and top athletes live in oceanfront homes here, under an elegant veil of privacy on long strands of beach, and enjoy front-row seats for surfing and unforgettable sunsets.
+                  While it may sound exclusive, there is plenty of Malibu magic for visitors to access too. Considered to have some of the most perfect waves anywhere, Malibu’s Surfrider Beach, just off the Malibu Pier, was named the first World Surfing Reserve; nearby Zuma Beach is a sun magnet for locals and families. In winter, Point Dume, at Malibu’s north end, provides an ideal perch for spotting migrating gray whales.
+                  Tough as it is to drag yourself away from the ocean, head inland a short distance and you can also hike through hills and canyons, filled with spring wildflowers and even waterfalls, on trails in the Santa Monica Mountains National Recreation Area.
+                </p>
+
+              </div>
+            </div>
+
+     </td>
+
+    <td style="padding-left:300px">
+    <div id="map">
+    <p>hahah</p>
+    <script>
+    function initMap()
+      {
+      var location={ lat:34.0259 ,lng:-118.7798};
+      var map=new google.maps.Map(document.getElementById("map"),{
+         zoom:4,
+         center:location
+      });
+      var marker=new google.maps.Marker({
+          position:location,
+          map:map
+       })
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbUdblkZsFfZZ-l6dnrfd32t78RAs5I4o&callback=initMap">
+    </script>
+
+    </div>
+
+
+
+      </td>
+
+    </tr>
+    </table>
+
+
+
+<br><br>
+    <section class="footer" id="cont">
+      <div class="container">
+
+        <table border="0">
+
+      <col width="330">
+	<col width="330">
+	<col width="330">
+	<col width="330">
+      <tr>
+        <td style="transform: translate(150px,-5px);"><h1><i><b><font color="white">Contact:</font></b></i></h1>
+        </td>
+        <td>
+          <div class="col-md-3" style="padding-left:70px">
+            <a href="https://www.instagram.com/_farmaan1/"><img src="instagram.png" class="logo"></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-3" style="padding-left:50px">
+          <a href="http://www.linkedin.com/in/chanderdeep-singh-sandhu-03670215a"><img src="linkedin-sign.png" class="logo"></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-3" style="padding-left:30px">
+          <a href="https://github.com/ashutoshkaushal"><img src="github-logo.png" class="logo"></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-3" style="transform: translate(20px,-5px)">
+         <a href="https://dikshantbaliresume.000webhostapp.com"><img src="resume.png" class="logo"></a>
+          </div>
+    </td>
+  </tr>
+
+    </table>
+  </div>
+</section>
+
+<div class="last">
+<b>Mail us at:</b> : <a href="gunnagyanijhawan2910@gmail.com" style="text-decoration: none;"><font color="white">Gunnagya Nijhawan </font></a>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+#div2
+{
+	text-align:center;
+	widht:100%;
+	margin:auto;
+}
+input[type="text"]
+{
+	height:40px;
+	font-size:20px;
+}
+#submitWeather
+{
+	height:40px;
+	font-size:20px;
+	font-weight:bold;
+	padding:5px;
+}
+#show
+{
+	text-align:center;
+	margin:auto;
+	width:70%;
+}
+#err
+{
+	font-size:30px;
+	text-align:center;
+	width:justify;
+}
+#b
+	{
+		background-image: linear-gradient(white,DodgerBlue,blue);
+		background-size:cover;
+		height:750px;
+		width:100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
